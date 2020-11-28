@@ -15,6 +15,6 @@ def get_clear_text(urls, file_name):
             i for i in soup.find_all(text=True))
         cleared_text = clear_text(extracted_text, '\n*:0123456789(-)').strip()
 
-        f = open(f'{file_name}{urls.index(url)}.txt', 'w')
+        f = open(f'{file_name}.txt', 'a')
         f.write(cleared_text)
         f.close()
